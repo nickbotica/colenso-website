@@ -1,0 +1,16 @@
+extends ../node_modules/jade-bootstrap/_bootstrap
+
+head
+  title = title
+
+block body
+  +navbar("Colenso Project", "dropdown_menu")
+    +nav_item("/", "active") Home
+
+  .container
+    br
+    +tab-list(["Read", "XML"],0)
+      +tab("Read", "active")
+        p !{file}
+      +tab("XML", "inactive")
+        p #{file}

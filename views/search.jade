@@ -1,0 +1,21 @@
+extends ../node_modules/jade-bootstrap/_bootstrap
+
+head
+  title = title
+
+block body
+  +navbar("Colenso Project", "dropdown_menu")
+    +nav_item("/", "inactive") Home
+
+  .container
+    form(action="/search", method="get")
+      input(type="text", name="searchString", value="#{content}")
+      input(type="submit", value="Search")
+
+  .container
+    p Found #{numResults} letters containing '#{content}'.
+      ul
+        each val in list
+          li
+            a(href="/load?file=" + val) !{val}
+
