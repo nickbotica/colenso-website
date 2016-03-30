@@ -5,7 +5,7 @@ head
 
 block body
   +navbar("Colenso Project", "dropdown_menu")
-    +nav_item("/", "inactive") Home
+    +nav_item("/") Home
 
   .container
     form(action="/search", method="get")
@@ -13,7 +13,7 @@ block body
       input(type="submit", value="Search")
 
   .container
-    p Found #{numResults} letters containing '#{content}'.
+    p Found #{numHits} letters containing '#{content}'.
       ul
         each val in list
           li

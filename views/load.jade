@@ -5,12 +5,15 @@ head
 
 block body
   +navbar("Colenso Project", "dropdown_menu")
-    +nav_item("/", "active") Home
+    +nav_item("/") Home
+
+  p
+    a(href='mailto:enter email address?subject=Check out this Colenso letter: http://localhost:3000/load?file=#{title}') Email this letter's link
 
   .container
     br
-    +tab-list(["Read", "XML"],0)
-      +tab("Read", "active")
+    +tab-list(["Plain", "XML"],0)
+      +tab("Plain", "active")
         p !{file}
       +tab("XML", "inactive")
         p #{file}
